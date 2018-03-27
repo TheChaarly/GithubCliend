@@ -1,0 +1,65 @@
+<?xml version='1.0' encoding='UTF-8' ?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:ui="http://java.sun.com/jsf/facelets"
+      xmlns:p="http://primefaces.org/ui"
+      xmlns:f="http://java.sun.com/jsf/core"
+      xmlns:h="http://java.sun.com/jsf/html">
+    <h:head>
+        <title>Facelet Title</title>
+    </h:head>
+    <h:body>
+        <p:outputLabel value="Hola mundo" />
+        <h:form id="usuarios" >
+            <p:dataTable id="datausuario" var="Usu" value="#{usuariosBean.listUsu}" emptyMessage="No hay nadie registrado"  >
+                
+                <p:column>
+                    <f:facet name="header">
+                        <h:outputLabel value="#" /> 
+                    </f:facet>
+                    <h:outputLabel value="#{Usu.id}" />
+                </p:column>
+                
+                <p:column>
+                    <f:facet name="header">
+                        <h:outputLabel value="#" /> 
+                    </f:facet>
+                    <h:outputLabel value="#{Usu.nom}" />
+                </p:column>
+                
+                <p:column>
+                    <f:facet name="header">
+                        <h:outputLabel value="#" /> 
+                    </f:facet>
+                    <h:outputLabel value="#{Usu.app}" />
+                </p:column>
+                
+                <p:column>
+                    <f:facet name="header">
+                        <h:outputLabel value="#" /> 
+                    </f:facet>
+                    <h:outputLabel value="#{Usu.tip}" />
+                </p:column>
+                
+                <p:column>
+                    <f:facet name="header">
+                        <h:outputLabel value="#" /> 
+                    </f:facet>
+                    <h:outputLabel value="#{Usu.pass}" />
+                </p:column>
+                
+                <p:column>
+                    <f:facet name="header">
+                        <h:outputLabel value="#" /> 
+                    </f:facet>
+                    <h:outputLabel value="#{Usu.estus}" />
+                </p:column>
+                
+            </p:dataTable>
+            
+            <h:commandButton actionListener="#{usuariosBean.getAllUsuarios}" value="Clic" />
+            
+        </h:form>
+    </h:body>
+</html>
+

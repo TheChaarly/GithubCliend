@@ -1,0 +1,24 @@
+/*
+To change this license header, choose License Headers in Project Properties.
+To change this template file, choose Tools | Templates
+and open the template in the editor.
+*/
+/* 
+    Created on : 23/03/2018, 12:59:26 PM
+    Author     : TheChaarly
+*/
+#rganime{
+    background-color: #000;
+    color: #ffffff;
+    border: 1px solid #ffffff;
+    margin-top: 40px;
+}
+.ui-fieldset-legend{
+    font-size: 14px;
+}
+.ui-inputfield{
+    width: 100%;
+}
+.ui-selectonemenu{
+    width: 100% !important;
+}

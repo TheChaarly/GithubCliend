@@ -1,0 +1,100 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!--
+To change this template, choose Tools | Templates
+and open the template in the editor.
+-->
+<!DOCTYPE html>
+<ui:composition template="/WEB-INF/temples/templates.xhtml" 
+                xmlns="http://www.w3.org/1999/xhtml"
+                xmlns:h="http://java.sun.com/jsf/html"
+                xmlns:p="http://primefaces.org/ui"
+                xmlns:ui="http://java.sun.com/jsf/facelets"
+                xmlns:c="http://java.sun.com/jsp/jstl/core"
+                xmlns:f="http://xmlns.jcp.org/jsf/core">
+       
+        <ui:define name="content">
+            
+            
+            <link href="../resources/css/registrarUsu.css" rel="stylesheet" type="text/css"/>
+            <h:form id="formUsuario" enctype="multipart/form-data">
+                <h1>Datos de usuario</h1>
+                <hr />
+                <div class="row">
+                    <div class="col-md-3">
+                        <p:outputLabel value="Nombre:" />
+                        <h:inputText class="form-control" value="#{usuariosBean.nombre}" />
+                    </div>
+                    <div class="col-md-3">
+                        <p:outputLabel value="Apellido Paterno:" />
+                        <h:inputText class="form-control" value="#{usuariosBean.appaterno}" />
+                    </div>
+                    <div class="col-md-3">
+                        <p:outputLabel value="Apellido Materno:" />
+                        <h:inputText class="form-control" value="#{usuariosBean.apmaterno}" />
+                    </div>
+                    <div class="col-md-3">
+                        <p:outputLabel value="Tipo usuario:" />
+                        <p:selectOneMenu value="#{usuariosBean.tipousu}" >
+                            <f:selectItem itemValue="0" itemLabel="Usuario" />
+                            <f:selectItem itemValue="1" itemLabel="Administrador" />
+                        </p:selectOneMenu>
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="col-md-3">
+                        <p:outputLabel value="Alias:" />
+                        <h:inputText class="form-control" value="#{usuariosBean.alias}"  />
+                    </div>
+                    <div class="col-md-3">
+                        <p:outputLabel value="Contraseña:" />
+                        <h:inputText class="form-control" value="#{usuariosBean.contra}" />
+                    </div>
+                    <div class="col-md-3">
+                        <p:outputLabel value="Fecha de nacimiento:" />
+                        <p:calendar id="popup" value="#{usuariosBean.fecha_nac}" />
+                    </div>
+                    <div class="col-md-3">
+                        <p:outputLabel value="Estatus:" />
+                        <p:selectOneMenu value="#{usuariosBean.estatus}" >
+                            <f:selectItem itemValue="0" itemLabel="Activo" />
+                            <f:selectItem itemValue="1" itemLabel="Baja" />
+                        </p:selectOneMenu>
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="col-md-3">
+                        <p:outputLabel value="Calle" />
+                        <p:inputText class="form-control" value="#{usuariosBean.calle}" />
+                    </div>
+                    <div class="col-md-3">
+                        <p:outputLabel value="Colonia" />
+                        <p:inputText class="form-control" value="#{usuariosBean.colonia}" />
+                    </div>
+                    <div class="col-md-3">
+                        <p:outputLabel value="Telefono" />
+                        <p:inputText class="form-control" value="#{usuariosBean.telefono}" />
+                    </div>
+                    <div class="col-md-3">
+                        <p:outputLabel value="Estado" />
+                        <p:selectOneMenu id="estadolist" value="#{usuariosBean.estado}" >
+                            <f:selectItem itemValue="0" itemLabel="Seleccione una opcion" />
+                            <f:selectItems value="#{estadoBean.listslecone}" />
+                        </p:selectOneMenu>
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="col-md-12">
+                        <p:outputLabel value="Carga tu foto o avatar:" />
+                        <p:fileUpload value="#{usuariosBean.filefoto}" mode="simple" class="btn btn-success"
+                                      sizeLimit="1000000"  allowTypes="/(\.|\/)(gif|jpg|jpeg|png)$/" /> 
+                    </div>
+                </div>
+                
+                <br />
+                <br />
+                <p:commandButton actionListener="#{usuariosBean.guardaRegUsuario}" value="submit" ajax="false" />
+            </h:form>
+        </ui:define>
+    
+</ui:composition>
+

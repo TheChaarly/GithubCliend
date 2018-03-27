@@ -1,0 +1,156 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!--
+To change this template, choose Tools | Templates
+and open the template in the editor.
+-->
+<!DOCTYPE html>
+<ui:composition
+      xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:h="http://java.sun.com/jsf/html"
+      xmlns:p="http://primefaces.org/ui"
+      xmlns:ui="http://java.sun.com/jsf/facelets"
+      xmlns:c="http://java.sun.com/jsp/jstl/core">
+       <h:outputStylesheet library="css" name="styleheader.css" />
+    
+        
+    <h:body>
+        
+        <div id="header" style="margin-top: 40px;">
+            <div class="container">
+                <h:form> 
+
+                    <div class="container">
+                        <div class="row">
+                            <div class="col-sm-3 col-md-3">
+                                <div class="panel-group" id="accordion">
+                                    <div class="panel panel-default">
+                                        <div class="panel-heading">
+                                            <h4 class="panel-title">
+                                                <a data-toggle="collapse" data-parent="#accordion" href="#collapseOne">
+                                                    <span class="glyphicon glyphicon-align-left" aria-hidden="true"></span>
+                                                    Animes</a>
+                                            </h4>
+                                        </div>
+                                        <div id="collapseOne" class="panel-collapse collapse in">
+                                            <ul class="list-group">
+                                                <li class="list-group-item">
+                                                    <span class="glyphicon glyphicon-pencil text-primary"></span>
+                                                    <p:link href="NewGeneroA.xhtml">Nuevo Genero</p:link>
+                                                </li>
+                                                <li class="list-group-item">
+                                                    <span class="glyphicon glyphicon-pencil text-primary"></span>
+                                                    <p:link href="AnimeForm.xhtml">Nuevo Anime</p:link>
+                                                </li>
+                                                <li class="list-group-item">
+                                                    <span class="glyphicon glyphicon-flash text-success"></span>
+                                                    <a href="http://fb.com/moinakbarali">Modificar</a>
+                                                </li>
+                                            </ul>
+                                        </div>
+                                    </div>
+                                    <div class="panel panel-default">
+                                        <div class="panel-heading">
+                                            <h4 class="panel-title">
+                                                <a data-toggle="collapse" data-parent="#accordion" href="#collapseTwo">
+                                                    <span class="glyphicon glyphicon-align-left" aria-hidden="true"></span>
+                                                    Peliculas</a>
+                                            </h4>
+                                        </div>
+                                        <div id="collapseTwo" class="panel-collapse collapse">
+                                            <ul class="list-group">
+                                                <li class="list-group-item">
+                                                    <span class="glyphicon glyphicon-pencil text-primary"></span>
+                                                    <p:link href="Login.xhtml" > Nuevo </p:link>
+                                                    
+                                                </li>
+                                                <li class="list-group-item">
+                                                    <span class="glyphicon glyphicon-flash text-success"></span>
+                                                    <a href="http://fb.com/moinakbarali">Modificar</a>
+                                                </li>
+                                            </ul>
+                                        </div>
+                                    </div>
+                                    <div class="panel panel-default">
+                                        <div class="panel-heading">
+                                            <h4 class="panel-title">
+                                                <a data-toggle="collapse" data-parent="#accordion" href="#collapseThree">
+                                                    <span class="glyphicon glyphicon-align-left" aria-hidden="true"></span>
+                                                    Series</a>
+                                            </h4>
+                                        </div>
+                                        <div id="collapseThree" class="panel-collapse collapse">
+                                            <ul class="list-group">
+                                                <li class="list-group-item">
+                                                    <span class="glyphicon glyphicon-pencil text-primary"></span>
+                                                    <a href="http://fb.com/moinakbarali">Nuevo</a>
+                                                </li>
+                                                <li class="list-group-item">
+                                                    <span class="glyphicon glyphicon-flash text-success"></span>
+                                                    <a href="http://fb.com/moinakbarali">Modificar</a>
+                                                </li>
+                                            </ul>
+                                        </div>
+                                    </div>
+                                    <div class="panel panel-default">
+                                        <div class="panel-heading">
+                                            <h4 class="panel-title">
+                                                <a data-toggle="collapse" data-parent="#accordion" href="#collapsefour">
+                                                    <span class="glyphicon glyphicon-align-left" aria-hidden="true"></span>
+                                                    Usuarios</a>
+                                            </h4>
+                                        </div>
+                                        <div id="collapsefour" class="panel-collapse collapse">
+                                            <ul class="list-group">
+                                                <li class="list-group-item">
+                                                    <span class="glyphicon glyphicon-pencil text-primary"></span>
+                                                    <a href="http://fb.com/moinakbarali">Nuevo</a>
+                                                </li>
+                                                <li class="list-group-item">
+                                                    <span class="glyphicon glyphicon-flash text-success"></span>
+                                                    <a href="http://fb.com/moinakbarali">Modificar</a>
+                                                </li>
+                                            </ul>
+                                        </div>
+                                    </div>
+                                    
+                                    <div class="panel panel-default">
+                                        <div class="panel-heading">
+                                            <h4 class="panel-title">
+                                                <a data-toggle="collapse" data-parent="#accordion" href="#collapseFive"><span class="glyphicon glyphicon-heart">
+                                                    </span>Notas</a>
+                                            </h4>
+                                        </div>
+                                        <div id="collapseFive" class="panel-collapse collapse">
+                                            <div class="list-group">
+                                                <a href="#" class="list-group-item">
+                                                    <h4 class="list-group-item-heading">List group item heading</h4>
+                                                    <p class="list-group-item-text">Donec id elit non mi porta gravida at eget metus. Maecenas sed diam eget risus varius blandit.</p>
+                                                </a>
+                                            </div>
+                                            <div class="list-group">
+                                                <a href="#" class="list-group-item active">
+                                                    <h4 class="list-group-item-heading">List group item heading</h4>
+                                                    <p class="list-group-item-text">Donec id elit non mi porta gravida at eget metus. Maecenas sed diam eget risus varius blandit.</p>
+                                                </a>
+                                            </div>
+                                            <div class="list-group">
+                                                <a href="#" class="list-group-item">
+                                                    <h4 class="list-group-item-heading">List group item heading</h4>
+                                                    <p class="list-group-item-text">Donec id elit non mi porta gravida at eget metus. Maecenas sed diam eget risus varius blandit.</p>
+                                                </a>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>                            
+                        </div>
+                    </div>
+
+                </h:form>
+            </div>
+        </div>
+
+    </h:body>
+    
+</ui:composition>
+

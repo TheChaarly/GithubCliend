@@ -1,0 +1,203 @@
+<!--
+To change this template, choose Tools | Templates
+and open the template in the editor.
+-->
+<!DOCTYPE html>
+<ui:composition template="/WEB-INF/temples/templeadmin.xhtml" 
+                xmlns="http://www.w3.org/1999/xhtml"
+                xmlns:h="http://java.sun.com/jsf/html"
+                xmlns:p="http://primefaces.org/ui"
+                xmlns:ui="http://java.sun.com/jsf/facelets"
+                xmlns:c="http://java.sun.com/jsp/jstl/core"
+                xmlns:f="http://xmlns.jcp.org/jsf/core"> 
+    
+    <ui:define name="content">
+        <link href="../resources/css/styleAnimeRg.css" rel="stylesheet" type="text/css"/>
+        <h:form style="margin-top: 45px;">
+            <!--<p:growl id="msgs" showDetail="true" />-->
+            <p:messages id="msgs" showDetail="true" closable="true" />
+            <div class="row">
+                <div class="col-md-11 col-md-offset-1">
+                    <p:fieldset id="generoA" legend="Registra nuevo genero" toggleable="true" toggleSpeed="400">
+                        
+                        <div class="row">
+                            <div class="col-md-6">
+                                <p:outputLabel value="Nombre del genero:" for="gnombre" />
+                                <p:inputText value="#{gnAnimeBean.nombre}" id="gnombre" required="true" />
+                                <p:message for="gnombre" />
+                            </div>
+                            
+                            <div class="col-md-6">
+                                <p:outputLabel for="gdescripcion" value="Descripción del genero:" />
+                                <p:inputTextarea id="gdescripcion" required="true" value="#{gnAnimeBean.descripcion}"  rows="1" cols="30" 
+                                                 maxlength="500" autoResize="false"/>
+                                <p:message for="gdescripcion" />
+                            </div>
+                        </div>
+                        <br />
+                        <br />
+                        <div class="row">
+                            <div class="col-md-12">
+                                <p:commandButton value="Registrar Genero" update="generoA, formRgAnime" actionListener="#{gnAnimeBean.registraGeneroA}" />
+                            </div>
+                        </div>
+                    </p:fieldset>                    
+                </div>
+            </div>
+        </h:form>
+        <br />
+        <br />
+        <h:form id="formRgAnime" >
+            <div class="row">
+                <div class="col-md-11 col-md-offset-1">
+                    <p:fieldset legend="Registra nuevo anime" toggleable="true" toggleSpeed="400">
+                        <div class="row">
+                            <div class="col-md-6">
+                                <p:outputLabel for="titori" value="Titilo Original" />
+                                <p:inputText id="titori" value="#{gnAnimeBean.tituloorg}" required="true" />
+                                <p:message for="titori" />
+                            </div>
+                            <div class="col-md-6">
+                                <p:outputLabel for="titsec" value="Titilo Secundario" />
+                                <p:inputText id="titsec" value="#{gnAnimeBean.titulosec}" required="true" />
+                                <p:message for="titsec" />
+                            </div>                         
+                        </div>
+                        <br />
+                        <div class="row">
+                            <div class="col-md-4">
+                                <p:outputLabel for="genone" value="Genero:" />
+                                <p:selectOneMenu required="true" id="genone" value="#{gnAnimeBean.gene1}" >
+                                    <f:selectItem itemLabel="Selepcione una opcion" />
+                                    <f:selectItems value="#{gnAnimeBean.listselecgen}" />
+                                </p:selectOneMenu>
+                                <p:message for="genone" />
+                            </div>
+                            <div class="col-md-4">
+                                <p:outputLabel for="gentwo" value="Genero2:"  />
+                                <p:selectOneMenu required="true" id="gentwo" value="#{gnAnimeBean.gene2}" >
+                                    <f:selectItem itemLabel="Selepcione una opcion" />
+                                    <f:selectItems value="#{gnAnimeBean.listselecgen2}" />
+                                </p:selectOneMenu>
+                                <p:message for="genone" />
+                            </div>
+                            <div class="col-md-4">
+                                <p:outputLabel for="genthree" value="Genero3:" />
+                                <p:selectOneMenu required="true" id="genthree" value="#{gnAnimeBean.gene3}"  >
+                                    <f:selectItem itemLabel="Selepcione una opcion" />
+                                    <f:selectItems value="#{gnAnimeBean.listselecgen3}" />
+                                </p:selectOneMenu>
+                                <p:message for="genone" />
+                            </div>
+                        </div>
+                        <br />
+                        <div class="row">
+                            <div class="col-md-4">
+                                <p:outputLabel for="estado"  value="Estado:" />
+                                <p:selectOneMenu id="estado" value="#{gnAnimeBean.estado}"  >
+                                    <f:selectItem itemLabel="Selepcione una opcion" itemValue="2" />
+                                    <f:selectItem itemLabel="Activo" itemValue="0" />
+                                    <f:selectItem itemLabel="Inactivo" itemValue="1" />
+                                </p:selectOneMenu>
+                                <p:message for="estado" />
+                            </div>
+                            <div class="col-md-4">
+                                <p:outputLabel value="Estatus" for="estatus"  />
+                                <p:selectOneMenu id="estatus" value="#{gnAnimeBean.estatus}" >
+                                    <f:selectItem itemValue="0" itemLabel="Seleccione una opción" />
+                                    <f:selectItem itemValue="Finalizado" itemLabel="Finalizado" />
+                                    <f:selectItem itemValue="Emision" itemLabel="Emision" />
+                                    <f:selectItem itemValue="Estreno" itemLabel="Estreno" />
+                                </p:selectOneMenu>
+                                <p:message for="estatus" />
+                            </div>
+                            <div class="col-md-4">
+                                <p:outputLabel value="Clasificacion" for="clasificacion" />
+                                <p:selectOneMenu id="clasificacion" value="#{gnAnimeBean.cclasif}" >
+                                    <f:selectItem itemValue="0" itemLabel="Seleccione una opción" />
+                                    <f:selectItem itemValue="A" itemLabel="A" />
+                                    <f:selectItem itemValue="B" itemLabel="B" />
+                                    <f:selectItem itemValue="B15" itemLabel="B15" />
+                                    <f:selectItem itemValue="C" itemLabel="C" />
+                                </p:selectOneMenu>
+                                <p:message for="clasificacion" />
+                            </div>
+                        </div>
+                        <br />
+                        <div class="row">
+                            <div class="col-md-3">
+                                <p:outputLabel for="feclan" value="Fecha de extreno:" />
+                                <p:calendar id="feclan" locale="de" navigator="true" value="#{gnAnimeBean.fechini}" pattern="yyyy-MMM-dd" />
+                                <p:message for="feclan" />
+                            </div>
+                            <div class="col-md-3">
+                                <p:outputLabel for="fecfin" value="Fecha de final:" />
+                                <p:calendar id="fecfin" locale="de" navigator="true" pattern="yyyy-MMM-dd" value="#{gnAnimeBean.fechfin}" />
+                                <p:message for="fecfin" />
+                            </div>
+                            <div class="col-md-3">
+                                <p:outputLabel for="capact" value="Capitulo Actual:" />
+                                <p:spinner id="capact" min="0" max="1000" value="#{gnAnimeBean.capIn}" />
+                                <p:message for="capact" />
+                            </div>
+                            <div class="col-md-3">
+                                <p:outputLabel for="capfin" value="Capitulo Final:"  />
+                                <p:spinner id="capfin" min="0" max="1000" value="#{gnAnimeBean.capFin}" />
+                                <p:message for="capfin" />
+                            </div>
+                        </div>
+                        <br />
+                        <div class="row">
+                            <div class="col-md-6">
+                                <p:outputLabel for="idioma" value="Idioma" />
+                                <p:selectOneMenu id="idioma" required="true" value="#{gnAnimeBean.idioma}" >
+                                    <f:selectItem itemValue="0" itemLabel="Seleccione una opción" />
+                                    <f:selectItem itemValue="Español" itemLabel="Español" />
+                                    <f:selectItem itemValue="Ingles" itemLabel="Ingles" />
+                                    <f:selectItem itemValue="Japones" itemLabel="Japones" />
+                                </p:selectOneMenu>
+                                <p:message for="idioma" />
+                            </div>
+                            <div class="col-md-6">
+                                <p:outputLabel for="Subtitulos" value="Subtitulos" />
+                                <p:selectOneMenu id="Subtitulos" required="true" value="#{gnAnimeBean.subtitul}" >
+                                    <f:selectItem itemValue="0" itemLabel="Seleccione una opción" />
+                                    <f:selectItem itemValue="Español" itemLabel="Español" />
+                                    <f:selectItem itemValue="Ingles" itemLabel="Ingles" />
+                                    <f:selectItem itemValue="Japones" itemLabel="Japones" />
+                                    <f:selectItem itemValue="Ninguno" itemLabel="Ninguno" />
+                                </p:selectOneMenu>
+                                <p:message for="Subtitulos" />
+                            </div>
+                        </div>
+                        <br />
+                        <div class="row">
+                            <div class="col-md-12">
+                                <p:outputLabel for="poster" value="Poster" />
+                                <p:fileUpload id="poster" required="true" value="#{gnAnimeBean.filefoto}" class="btn btn-info" mode="simple" sizeLimit="1000000"  allowTypes="/(\.|\/)(gif|jpg|jpeg|png)$/" />
+                                <p:message for="poster" />
+                            </div>
+                        </div>
+                        <br />
+                        <div class="row">
+                            <div class="col-md-12">
+                                <p:outputLabel for="desc" value="Descripcion"  />
+                                <p:inputTextarea id="desc" value="#{gnAnimeBean.descrip}" />
+                                <p:message for="desc"/>                  
+                            </div>
+                        </div>
+                        <br />
+                        <div class="row">
+                            <div class="col-md-12">
+                                <p:commandButton value="Guardar Anime" actionListener="#{gnAnimeBean.rgAnime}" />
+                            </div>
+                        </div>
+                    </p:fieldset>                    
+                </div>
+            </div>
+        </h:form>
+        <br />
+        <br />
+    </ui:define>
+</ui:composition>
+
